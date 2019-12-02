@@ -39,6 +39,7 @@ public class SaveCaloryFragment extends Fragment {
 
     public SaveCaloryFragment() {
         // Required empty public constructor
+
     }
 
     /**
@@ -51,6 +52,7 @@ public class SaveCaloryFragment extends Fragment {
         SaveCaloryFragment fragment = new SaveCaloryFragment();
         Bundle bundle = new Bundle();
         // TODO: pass object calory dengan menggunakan bundle.putParcelable
+        bundle.putParcelable(Constant.ARG_CALORY, calory);
 
 
         fragment.setArguments(bundle);
@@ -79,6 +81,8 @@ public class SaveCaloryFragment extends Fragment {
         if (bundle != null) {
             calory = bundle.getParcelable(Constant.ARG_CALORY);
             // TODO: set informasi calory pada layar tampilan
+            foodText.setText(calory.getFood());
+            caloryText.setText(String.valueOf(calory.getCalory()));
 
         }
     }
